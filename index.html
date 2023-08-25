@@ -36,7 +36,7 @@
       <div class="venue-info">Venue Info</div>
       <div class="ticket">Ticket</div>
       <div class="contact">Contact</div>
-      <div class="elektrik-eel">Elektrik Eel</div>
+      <div class="elektrik-eel">10days 10hrs 10mins 10s</div>
       <div class="a-premium-underground">
         A premium underground house event that amplifies the pulse of the night with electrifying beats and an unmatched aura. Our festival celebrates the heart of house music,
         embracing sub-genres like Acid House, Chicago House, Deep House, Tribal House, Dark Electro, and Industrial.
@@ -552,4 +552,33 @@
     integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
     crossorigin="anonymous"
   ></script>
+  <script>
+  $(document).ready(function() {
+    var endDate = new Date();
+    endDate.setDate(endDate.getDate() + 10); // 10 days from now
+    endDate.setHours(endDate.getHours() + 10); // 10 hours from now
+    endDate.setMinutes(endDate.getMinutes() + 10); // 10 minutes from now
+    endDate.setSeconds(endDate.getSeconds() + 10); // 10 seconds from now
+
+    var countdown = setInterval(function() {
+      var now = new Date().getTime();
+      var distance = endDate - now;
+
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      var countdownText = days + " days " + hours + " hours " + minutes + " mins " + seconds + " s";
+
+      $(".elektrik-eel").text(countdownText);
+      $(".text-red").text(countdownText);
+
+      if (distance < 0) {
+        clearInterval(countdown);
+        $(".elektrik-eel, .text-red").text("EXPIRED");
+      }
+    }, 1000);
+  });
+  </script>
 </html>
