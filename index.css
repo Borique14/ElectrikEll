@@ -122,12 +122,12 @@
   display: inline-block;
 }
 .elektrik-eel {
-  top: 198px;
+  top: 120px;
   left: 887px;
-  font-size: 67.5px;
+  font-size: 55px;
   font-family: var(--font-changa);
   color: #ff0606;
-  width: 363px;
+  width: 450px;
   height: 102px;
   text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25), 0 4px 4px rgba(0, 0, 0, 0.25),
     0 4px 4px rgba(0, 0, 0, 0.25), 0 4px 4px rgba(0, 0, 0, 0.25),
